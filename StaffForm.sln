@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm", "StaffForm\StaffForm.csproj", "{7DAC3C99-0FD7-4E2E-89E4-ED6531ECF80A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffFormAPI", "StaffFormAPI\StaffFormAPI.csproj", "{07CC3FF6-3A38-44EF-ABBB-456ECDEA1AFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm.Core", "StaffForm.Core\StaffForm.Core.csproj", "{B7618525-AFA0-4032-B4FC-2A4299E06A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm.Entity", "StaffForm.Entity\StaffForm.Entity.csproj", "{BCB7D1B2-970E-4BF5-AF03-5E34AC83B9B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm.Repository", "StaffForm.Repository\StaffForm.Repository.csproj", "{752FE1FF-0CC7-4AEB-B6EE-CBD37D6EF1B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm.Services", "StaffForm.Services\StaffForm.Services.csproj", "{E817233E-0457-4F11-8264-42CB68409EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffForm.Utility", "StaffForm.Utility\StaffForm.Utility.csproj", "{AC2364BE-58DB-4BF2-A2E3-A5BAA606390F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DAC3C99-0FD7-4E2E-89E4-ED6531ECF80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAC3C99-0FD7-4E2E-89E4-ED6531ECF80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAC3C99-0FD7-4E2E-89E4-ED6531ECF80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAC3C99-0FD7-4E2E-89E4-ED6531ECF80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07CC3FF6-3A38-44EF-ABBB-456ECDEA1AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CC3FF6-3A38-44EF-ABBB-456ECDEA1AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CC3FF6-3A38-44EF-ABBB-456ECDEA1AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CC3FF6-3A38-44EF-ABBB-456ECDEA1AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7618525-AFA0-4032-B4FC-2A4299E06A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7618525-AFA0-4032-B4FC-2A4299E06A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7618525-AFA0-4032-B4FC-2A4299E06A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7618525-AFA0-4032-B4FC-2A4299E06A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB7D1B2-970E-4BF5-AF03-5E34AC83B9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB7D1B2-970E-4BF5-AF03-5E34AC83B9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB7D1B2-970E-4BF5-AF03-5E34AC83B9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB7D1B2-970E-4BF5-AF03-5E34AC83B9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{752FE1FF-0CC7-4AEB-B6EE-CBD37D6EF1B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752FE1FF-0CC7-4AEB-B6EE-CBD37D6EF1B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752FE1FF-0CC7-4AEB-B6EE-CBD37D6EF1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752FE1FF-0CC7-4AEB-B6EE-CBD37D6EF1B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E817233E-0457-4F11-8264-42CB68409EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E817233E-0457-4F11-8264-42CB68409EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E817233E-0457-4F11-8264-42CB68409EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E817233E-0457-4F11-8264-42CB68409EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2364BE-58DB-4BF2-A2E3-A5BAA606390F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2364BE-58DB-4BF2-A2E3-A5BAA606390F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2364BE-58DB-4BF2-A2E3-A5BAA606390F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2364BE-58DB-4BF2-A2E3-A5BAA606390F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFB14591-3C56-44D5-99C1-EAAE1E36800B}
+	EndGlobalSection
+EndGlobal
