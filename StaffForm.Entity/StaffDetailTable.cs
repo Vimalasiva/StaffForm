@@ -15,8 +15,8 @@ namespace StaffForm.Entity
         public string Company_Name { get; set; }
         public DateTime Joining_Date { get; set; }
         public string Position { get; set; }
+        public int Staff_Location_ID { get; set; }
         public int Year_Of_Experience { get; set; }
-        public string Branch { get; set; }
         public string User_Address { get; set; }
         public long Mobile_No { get; set; }
         public string Email_ID { get; set; }
@@ -25,5 +25,7 @@ namespace StaffForm.Entity
         public bool Is_Deleted { get; set; }
         public DateTime Created_Time_Stamp { get; set; }
         public DateTime Updated_Time_Stamp { get; set; }
+
+        public virtual Staff_Location Staff_Location { get; set; }
     }
 }

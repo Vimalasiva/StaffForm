@@ -13,5 +13,7 @@ namespace StaffForm.Core.IService
         List<StaffModel> listform();
         public void deleteid(int id);
         public StaffModel Save(int id);
+        List<StaffModel> searchdetail(string Name);
+        List<LocationModel> changedetail();
     }
 }

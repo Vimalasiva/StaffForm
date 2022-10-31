@@ -30,6 +30,14 @@ namespace StaffForm.Services
         }
         #endregion
 
+        #region Searching detail
+
+        public List<StaffModel> searchdetail(string Name)
+        {
+            return _staffRepository.searchdetail( Name);
+        }
+        #endregion
+
         #region deleteid
         public void deleteid(int id)
         {
@@ -43,5 +51,13 @@ namespace StaffForm.Services
             return _staffRepository.Save(id);
         }
         #endregion
+
+        #region Getting location and ID from another table in database
+        public List<LocationModel> changedetail()
+        {
+            return _staffRepository.changedetail();
+        }
+        #endregion
+
     }
-}
+}   

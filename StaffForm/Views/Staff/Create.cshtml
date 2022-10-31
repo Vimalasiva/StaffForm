@@ -1,14 +1,14 @@
-﻿@model StaffForm.Core.Model.StaffModel                   
+﻿@model StaffForm.Core.Model.StaffModel               
 @{
     Layout = null;
 }
 <head>
     <meta charset="utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a10c7f6efa.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-      <script src="https://kit.fontawesome.com/a10c7f6efa.js" crossorigin="anonymous"></script>
     <title>Adding details</title>
     <style>
         .card {
@@ -17,8 +17,8 @@
             margin-left: 5%;
             margin-top: 10%;
             background-size: cover;
-            background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(154,75,228,1) 100%);
-            border-color:white;   
+            
+            border-color:black;   
         }
 
         form {
@@ -28,7 +28,6 @@
 
         button {
             background:radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(149,148,233,1) 100%);
-            
             color:black;
         }
 
@@ -51,7 +50,7 @@
             width:260px;
             height:35px;
             color:black;
-            border-color:white;
+            border-color: black;
             font-style:oblique;
             margin-left:8px;
         }
@@ -69,21 +68,21 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5 ">
-                            <h2 class="text-uppercase text-center mb-5" style="font-family: 'Tangerine' , serif; font-weight: 900;">EMPLOYEE DETAIL</h2>
+                            <h2 class="text-uppercase text-center mb-5" style="font-style:oblique;font-weight: 900;">EMPLOYEE DETAIL</h2>
                             <form>
                                 @Html.HiddenFor(m=>m.ID)                                   
                                  <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label" style="font-style: oblique;">NAME<span style="color:red;">*</span></label>
                                     
                                     <i class="fa-solid fa-user" style="padding-top:10px;"></i>
-                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control",@placeholder="Enter your Name",@id="name",@name="name",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control",@placeholder="Enter your Name",@id="name",@name="name",Style="border-radius:20px;border-color:black;background-color:Transparen;font-style: oblique;margin-left:10px;"})
                                     </div>
                               
                               <div class="col-md-6 mt-1">
                                     <label for="inputPassword4" class="form-label" style="font-style: oblique;">AGE<span style="color:red">*</span></label>
                                     
                                         <i class="fa-solid fa-cake-candles"style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control",@placeholder="Enter your age",@id="age",@name="age",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control",@placeholder="Enter your age",@id="age",@name="age",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
                             
                              </div>
                                 <div class="col-md-6 mt-1 ">
@@ -117,14 +116,14 @@
                                     <label for="inputEmail4" class="form-label" style="font-style: oblique;">COMPANY NAME<span style="color:red">*</span></label>
                                    
                                         <i class="fa-solid fa-building-user" style="padding-top:10px;"></i>
-                                       @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control",@placeholder="Enter your company name",@id="company",@name="company",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control",@placeholder="Enter your company name",@id="company",@name="company",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
                                      
                                 </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">DATE OF JOINING<span style="color:red">*</span></label>
                                
                                         <i class="fa-solid fa-calendar-days" style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.Datestr, new {@class = "form-control",@type="date",@placeholder="yyyy/MM/dd",@id="date",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    @Html.TextBoxFor(m => m.Datestr, new {@class = "form-control",@type="date",@placeholder="yyyy/MM/dd",@id="date",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
                                
                                 </div>
                                 <div class="col-md-12 mt-1">
@@ -148,43 +147,44 @@
                                     <label for="inputAddress2" class="form-label" style="font-style: oblique;">EXPERIENCE<span style="color:red">*</span></label>
                                  
                                     <i class="fa-solid fa-clock-rotate-left" style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.Experience, new { @class = "form-control",@placeholder="Enter your Experience",@id="experience",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;" })
+                                    @Html.TextBoxFor(m => m.Experience, new { @class = "form-control",@placeholder="Enter your Experience",@id="experience",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;" })
                                
                                 </div>
-                                <div class="col-md-6 mt-1">
-                                    <label for="inputCity" class="form-label" style="font-style: oblique;">LOCATION<span style="color:red">*</span></label>
-                              
-                                    <i class="fa-solid fa-location-dot" style="padding-top:10px;"></i>
-                                    @Html.TextBoxFor(m => m.Location, new { @class = "form-control",@placeholder="Enter your location",@id="location",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;" })
-                               
+                                <div class="col-md-12 mt-1">
+                                    <label for="inputAddress" class="form-label" id="job" style="font-style: oblique;">LOCATION<span style="color:red">*</span></label>
+
+                                    <i class="fa-solid fa-laptop-code" style="padding-top:8px;"></i>
+                                    <div class="role">
+                                        @Html.DropDownListFor(m=>m.StaffLocationID, new SelectList(ViewBag.List, "StaffLocationID", "Location"), "-- Select Location --", new { @class = "form-control-sm rounded-pill", })
+                                    </div>
                                 </div>
                                  <div class="col-md-6 mt-1">
                                 <label for="inputCity" class="form-label" style="font-style: oblique;">  USER ADDRESS<span style="color:red">*</span></label>
                                     
                                         <i class="fa-solid fa-house-user" style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control",@placeholder="Enter your address",@id="address",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control",@placeholder="Enter your address",@id="address",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
                              
                                 </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">MOBILE<span style="color:red">*</span>  </label>
                                   
                                         <i class="fa-solid fa-phone" style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.MobileNo, new {@maxlength="10" ,@class = "form-control",@placeholder="Enter your mobile number",@id="phone",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;" })
+                                    @Html.TextBoxFor(m => m.MobileNo, new {@maxlength="10" ,@class = "form-control",@placeholder="Enter your mobile number",@id="phone",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;" })
                                
                                 </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">EMAIL ID<span style="color:red">*</span></label>
                                     
                                         <i class="fa-solid fa-envelope" style="padding-top:10px;"></i>
-                                        @Html.TextBoxFor(m => m.EmailID, new { @class = "form-control",@placeholder="Enter your Email",@id="email",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;" })
+                                    @Html.TextBoxFor(m => m.EmailID, new { @class = "form-control",@placeholder="Enter your Email",@id="email",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;" })
                               
                                 </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">PASSWORD<span style="color:red">*</span></label>
                               
                                         <i class="fa-solid fa-key"></i>
-                                        @Html.PasswordFor(m => m.Password, new {@maxlength="10", @class = "form-control",@placeholder="Enter your Password",@type="password",@id="passtype",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
-                                        <div class="icon btn"><span class="fas fa-eye-slash" onclick="mypassword()"></span></div>
+                                    @Html.PasswordFor(m => m.Password, new {@maxlength="10", @class = "form-control",@placeholder="Enter your Password",@type="password",@id="passtype",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                        <div class="icon btn"><span class="fas fa-eye-slash"  id="word" onclick="mypassword()"></span></div>
                                
                                 </div>
                                
@@ -192,14 +192,12 @@
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">RE-PASSWORD<span style="color:red">*</span></label>
                                 
                                         <i class="fa-solid fa-key" style="padding-top:10px;"></i>
-                                        @Html.PasswordFor(m => m.RePassword, new { @maxlength="10",@class = "form-control",@placeholder="Enter your Password again",@type="password",@id="repassword",Style="border-radius:20px;border-color:white;background-color:Transparent;font-style: oblique;margin-left:10px;"})
-                                    <div class="icon btn"><span class="fas fa-eye-slash" onclick="myrepassword()"></span></div>
+                                    @Html.PasswordFor(m => m.RePassword, new { @maxlength="10",@class = "form-control",@placeholder="Enter your Password again",@type="password",@id="repassword",Style="border-radius:20px;border-color:black;background-color:Transparent;font-style: oblique;margin-left:10px;"})
+                                    <div class="icon btn"><span class="fas fa-eye-slash"  id="repass" onclick="myrepassword()"></span></div>
                                 
                                 </div>
-                                
-                                <div class="col-12 mt-5">
-                                    <button onclick="location.href='@Url.Action("List","Staff")'">Submit</button>
-                                </div>
+
+                                <button>Submit</button>
                             </form>
 
                         </div>
@@ -237,7 +235,7 @@
                 Experience: {
                     required: true,
                 },
-                Location: {
+                StaffLocationID: {
                     required: true,
                 },
                 Address: {
@@ -266,7 +264,8 @@
                 },
             },
             // in 'messages' user have to specify message as per rules
-            messages: {
+            messages:
+            {
                 Name: {
                     required: " Please enter a Name",
                 },
@@ -279,11 +278,10 @@
                 Role: {
                     required: "Select your Role",
                 },
-
                 Experience: {
                     required: "Enter your year of experience",
                 },
-                Location: {
+                StaffLocationID: {
                     required: "Enter your location",
                 },
                 MobileNo: {
@@ -327,19 +325,31 @@
         });
     });
     function mypassword() {
-        var x = document.getElementById("passtype");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+        var Password = document.getElementById('passtype');
+        var Status = document.getElementById('word');
+
+        if (Password.type == 'password') {
+            Password.type = 'text';
+            Status.className = 'fa fa-eye';
+
+        }
+        else {
+            Password.type = 'password';
+            Status.className = 'fa fa-eye-slash';
         }
     }
     function myrepassword() {
-        var x = document.getElementById("repassword");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+        var passwordInput = document.getElementById('repassword');
+        var passStatus = document.getElementById('repass');
+
+        if (passwordInput.type == 'password') {
+            passwordInput.type = 'text';
+            passStatus.className = 'fa fa-eye';
+
+        }
+        else {
+            passwordInput.type = 'password';
+            passStatus.className = 'fa fa-eye-slash';
         }
     }
 </script>

@@ -19,6 +19,7 @@ namespace StaffForm.Entity
         }
 
         public virtual DbSet<StaffDetailTable> StaffDetailTable { get; set; }
+        public virtual DbSet<Staff_Location> Staff_Location { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,11 +34,6 @@ namespace StaffForm.Entity
             modelBuilder.Entity<StaffDetailTable>(entity =>
             {
                 entity.HasKey(e => e.Staff_ID);
-
-                entity.Property(e => e.Branch)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.Company_Name)
                     .IsRequired()
@@ -92,6 +88,32 @@ namespace StaffForm.Entity
                 entity.Property(e => e.User_Qualification)
                     .IsRequired()
                     .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Staff_Location)
+                    .WithMany(p => p.StaffDetailTable)
+                    .HasForeignKey(d => d.Staff_Location_ID)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StaffDetailTable_Staff_Location1");
+            });
+
+            modelBuilder.Entity<Staff_Location>(entity =>
+            {
+                entity.HasKey(e => e.Staff_Location_ID);
+
+                entity.Property(e => e.Staff_Location_ID).ValueGeneratedNever();
+
+                entity.Property(e => e.Created_Time_Stamp)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Updated_Time_Stamp)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Working_Location)
+                    .IsRequired()
+                    .HasMaxLength(15)
                     .IsUnicode(false);
             });
 

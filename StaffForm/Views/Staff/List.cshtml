@@ -1,205 +1,140 @@
-﻿@model IEnumerable<StaffForm.Core.Model.StaffModel>
-@{
+﻿@{
     Layout = null;
 }
-<head>
-    <script src="https://kit.fontawesome.com/a10c7f6efa.js" crossorigin="anonymous"></script>
-    <style>
-       
+@model IEnumerable<StaffForm.Core.Model.StaffModel>
 
-        #title {
-            background-color: darkslateblue;
-            color: white;
-            padding-top: 20px;
-            width: 200%;
-            padding-right: 30px;
-        }
 
-        th, td {
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            padding:8px;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a10c7f6efa.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
-        td {
-            font-size: medium;
-            background-color: white;
-            width:100%;
-        }
 
-        #add {
-            padding-left: 87%;
-            font-weight: 800;
-            margin-top: 5px;
-        }
+<style>
+    a {
+        text-decoration: none;
+    }
 
-        #detail {
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 30px;
-            margin-left: 450px;
-        }
-        .table {
-            margin-bottom: 100px;
-            width: 95%;
-            height: 10%;
-            margin-left: 24px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            border-collapse: collapse;
-        }
-        .ad {
-            margin-left: 80%;
-            height: 40px;
-            width: 200px;         
-            font-size: medium;
-            border-radius: 5px;
-            color:black;
-            box-shadow:2px 2px;
-           background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,165,253,1) 100%);
-            border: black;
-            font-style:oblique;
-        }
+    .form-inline {
+        display: flex;
+    }
 
-        #delete {
-            color: red;
-        }
+    #mytable tr:nth-child(even) {
+        background-color: #f2f2f2;
+        margin-top:40px;
+    }
+</style>
+<section class="vh-150" style="background:linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,165,253,1) 100%);">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-12 col-xl-10" style="width:200%">
+                <div class="card" >
+                    <nav class="navbar navbar-light bg-light justify-content-between px-5 " >
+                        <h5 class="mb-0" style="font-style:oblique"><i class="fa-solid fa-list"></i> List of Employee</h5>
+                        <div class="form-inline pt-3">
+                            <button class="btn btn-primary" onclick="location.href='@Url.Action("Create","Staff")'" style="font-style:oblique">Create New Detail</button>
+                        </div>
+                    </nav>
+                    @using (Html.BeginForm("search", "Staff", FormMethod.Get))
+                       {
+                            <div class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:150px;margin-left:900px;" name="Name">
+                                     <button type="submit" style="border:none">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                     </button>
+                            </div>                                                     
+                       }
+                    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 450px;overflow:auto">
+                        <table class="table" id="mytable" cellspacing="0"  width="100%" style="font-style:oblique;">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>                                
+                                    <th>Qualification</th>
+                                    <th>Company</th>
+                                    <th>Datestr</th>
+                                    <th>Role</th>
+                                    <th>Experience</th>
+                                    <th>Branch</th>                                  
+                                    <th>MobileNo</th>                                    
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model)
+                                {
 
-        button {
-            border: none;
-            background: white;
-            color: red;
-        }
-        .container{
-            height:90%;
-            width:1200px;
-            padding-left:5px;
-            margin-left:30px;
-            margin-top:40px;  
-            border-radius:10px;
-            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(215,45,253,1) 100%);
-        }
-    </style>
-
-    <title>List of Employee</title>
-</head>
-<body>
-    <div class="container mt-5 overflow-auto" style="border:5px solid black;">
-        <div class="row p-5">
-            <div class="col-10" id="detail" style="font-family: 'Tangerine' , serif;">DETAILS OF EMPLOYEE</div>
-            
-            <button class="ad" onclick="location.href='@Url.Action("Create","Staff")'">ADD EMPLOYEE DETAIL</button>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(model => i.Name)
+                                        </td>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(model => i.Qualification)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => i.CompanyName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => i.Datestr)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => i.Role)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => i.Experience)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => i.Location)
+                                        </td>
+                                       
+                                        <td>
+                                            @Html.DisplayFor(model => i.MobileNo)
+                                        </td>
+                                        
+                                        <td>
+                                            @Html.ActionLink(" ","Edit", new { id=i.ID},new{@class="fa-solid fa-pen-to-square",title="Edit"})
+                                            <button onclick="return confirm('Are you sure want to delete this record?')" style="background:none;border:none">
+                                                @Html.ActionLink(" ", "Delete", new {id = i.ID},new{@class="fas fa-trash-alt text-danger",title="Delete" })
+                                            </button>
+                                            @*@Html.ActionLink(" ","_Detail", new { id=i.ID},new{@class="fa-solid fa-eye text-info",title="Detail"})*@
+                                            <button type="button" style="background:none;border:none" data-toggle="modal" data-target="#exampleModalCenter" data-whatever="Supplier" onclick="detaillist('@i.ID')">
+                                                <i class="fa-regular fa-eye" title="Detail"></i>
+                                            </button>
+                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Detail of Employee</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body" id="mybody">                                                       
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" style="background-color:red;border-radius:5px;color:white;border:none"data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <table class="table align-center">
-            <thead>
-                <tr id="title">
-
-                    <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Age)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Gender)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Qualification)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CompanyName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Datestr)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Role)
-
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Experience)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Location)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Address)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.MobileNo)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.EmailID)
-                    </th>
-                    @*<th>
-                        @Html.DisplayNameFor(model => model.Password)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.RePassword)
-                    </th>*@
-                    <th>
-                        Action
-                    </th>
-                    
-                </tr>
-                @foreach (var i in Model)
-                {
-                    <tr>
-
-                        <td>
-                            @Html.DisplayFor(model => i.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Age)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Gender)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Qualification)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.CompanyName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Datestr)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Role)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Experience)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Location)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.Address)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.MobileNo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.EmailID)
-                        </td>
-                        @*<td>
-                            @Html.DisplayFor(model => i.Password)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => i.RePassword)
-                        </td>*@
-                        <td>
-                            @Html.ActionLink(" ","Edit", new { id=i.ID},new{@class="fa-solid fa-pen-to-square",title="Edit"})
-                            <button onclick="return confirm('Are you sure want to delete this record?')">
-                                @Html.ActionLink(" ", "Delete", new {id = i.ID},new{@class="fas fa-trash-alt text-danger",title="Delete" })
-
-                            </button>
-
-                        </td>
-                    </tr>
-                }
-            </thead>
-        </table>
     </div>
-</body>
+</section>
+<script type="text/jscript">
+    function detaillist(id) {
+        debugger;
+        $("#staticBackdrop").css('display', 'block');
+        $("#mybody").load("/Staff/_Detail?id=" + id);
+        $("#staticBackdrop").modal("show");
+    }
+</script>
+

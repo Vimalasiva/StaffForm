@@ -24,12 +24,21 @@ namespace StaffFormAPI.Controllers
         }
         #endregion
 
-        #region List
+        #region List(Read)
         [HttpGet]
-        public IActionResult List()
+        public IActionResult list()
         {
             var list = staffService.listform();
             return Ok(list);
+        }
+        #endregion
+
+        #region Searching detail
+        [HttpGet]
+        public IActionResult search(string Name)
+        {
+            var search = staffService.searchdetail(Name);
+            return Ok(search);
         }
         #endregion
 
@@ -39,6 +48,15 @@ namespace StaffFormAPI.Controllers
         {
             var edit = staffService.Save(id);
             return Ok(edit);
+        }
+        #endregion
+
+        #region Getting ID and Location from another table in database
+        [HttpGet]
+        public IActionResult Change()
+        {
+            var change = staffService.changedetail();
+            return Ok(change);
         }
         #endregion
 
