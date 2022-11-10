@@ -1,8 +1,12 @@
-﻿using System;
+﻿using NSwag.Annotations;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace StaffForm.Core.Model
@@ -18,7 +22,7 @@ namespace StaffForm.Core.Model
         public DateTime JoiningDate { get; set; }
         public string Role { get; set; }
         public int Experience { get; set; }
-     
+        
         public string Address { get; set; }
         public long MobileNo { get; set; }
         public string EmailID { get; set; }
@@ -28,6 +32,7 @@ namespace StaffForm.Core.Model
         public DateTime Created_Time_Stamp { get; set; }
         public DateTime Updated_Time_Stamp { get; set; }
         public string Datestr { get; set; }
+        //[JsonIgnore]//--->When this attribute is used the particular property is hidden from swagger.
         public string? Location { get; set; }
         public int StaffLocationID { get; set; }
     }

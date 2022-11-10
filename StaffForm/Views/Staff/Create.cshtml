@@ -70,7 +70,8 @@
                         <div class="card-body p-5 ">
                             <h2 class="text-uppercase text-center mb-5" style="font-style:oblique;font-weight: 900;">EMPLOYEE DETAIL</h2>
                             <form>
-                                @Html.HiddenFor(m=>m.ID)                                   
+                                @Html.HiddenFor(m=>m.ID,new{@id="StaffID"})     
+                                <div id="clear">
                                  <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label" style="font-style: oblique;">NAME<span style="color:red;">*</span></label>
                                     
@@ -187,7 +188,7 @@
                                         <div class="icon btn"><span class="fas fa-eye-slash"  id="word" onclick="mypassword()"></span></div>
                                
                                 </div>
-                               
+                               </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="inputCity" class="form-label" style="font-style: oblique;">RE-PASSWORD<span style="color:red">*</span></label>
                                 
@@ -196,8 +197,11 @@
                                     <div class="icon btn"><span class="fas fa-eye-slash"  id="repass" onclick="myrepassword()"></span></div>
                                 
                                 </div>
-
-                                <button>Submit</button>
+                                <div>
+                                    <button id="button">Submit</button>
+                                    <button id="btnclear"  type="button" onclick="newFunction()">Clear</button>
+                                    <button onclick="location.href='@Url.Action("List","Staff")'" >Back To List</button>
+                                </div>
                             </form>
 
                         </div>
@@ -351,6 +355,17 @@
             passwordInput.type = 'password';
             passStatus.className = 'fa fa-eye-slash';
         }
+    }
+    var id = $("#StaffID").val();
+    if (id!=0) {
+        $('#button').html("Update");//To change the text of button
+
+    }
+    //function Cleardetail(){
+    //    $("#Clear").find("input").val("");
+    //}
+    function newFunction() {
+        $("#clear").closest('form').find("input", "select").val("");
     }
 </script>
 

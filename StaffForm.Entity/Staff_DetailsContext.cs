@@ -25,6 +25,7 @@ namespace StaffForm.Entity
         {
             if (!optionsBuilder.IsConfigured)
             {
+
                 optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSqlLocalDb;Initial Catalog=Staff_Details;Integrated Security=True");
             }
         }
@@ -73,7 +74,8 @@ namespace StaffForm.Entity
                 entity.Property(e => e.User_Address)
                     .IsRequired()
                     .HasMaxLength(10)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('-')");
 
                 entity.Property(e => e.User_Gender)
                     .IsRequired()
