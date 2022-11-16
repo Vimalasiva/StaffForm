@@ -148,6 +148,7 @@ namespace StaffForm.Repository
                         staffModel.Experience = item.Year_Of_Experience;
                         var ID = item.Staff_Location_ID;
                         var place = entity.Staff_Location.Where(m => m.Staff_Location_ID == ID).SingleOrDefault();
+                        staffModel.StaffLocationID = item.Staff_Location_ID;
                         staffModel.Location= place.Working_Location;
                         staffModel.Address = item.User_Address;
                         staffModel.MobileNo = item.Mobile_No;

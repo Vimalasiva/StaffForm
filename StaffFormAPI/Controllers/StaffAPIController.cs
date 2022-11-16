@@ -51,7 +51,7 @@ namespace StaffFormAPI.Controllers
         }
         #endregion
 
-        #region Getting ID and Location from another table in database
+        #region Getting ID and Location from location table in database
         [HttpGet]
         public IActionResult Change()
         {
